@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE989CB3-A77F-40E2-8292-820A8388DAC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>servisdemo13</RootNamespace>
+    <AssemblyName>servisdemo13</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model133.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model133.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model133.edmx.diagram">
+      <DependentUpon>Model133.edmx</DependentUpon>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\dyservice.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Projects.mdf" />
+    <Content Include="App_Data\Projects_log.ldf">
+      <DependentUpon>Projects.mdf</DependentUpon>
+    </Content>
+    <Content Include="Model133.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model133.edmx</DependentUpon>
+      <LastGenOutput>Model133.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model133.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model133.edmx</DependentUpon>
+      <LastGenOutput>Model133.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service1.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseController.cs" />
+    <Compile Include="BASE\BaseModel.cs" />
+    <Compile Include="BASE\GraphsModels\ProjectChartModel.cs" />
+    <Compile Include="BASE\ProjectModel\ProjectModel.cs" />
+    <Compile Include="BASE\StatusModel.cs" />
+    <Compile Include="BASE\UserModel\DegerlendirmeDurumModel.cs" />
+    <Compile Include="BASE\UserModel\EvaluationStatus.cs" />
+    <Compile Include="BASE\UserModel\GetUserTokenModel.cs" />
+    <Compile Include="BASE\UserModel\InsertTaskModel.cs" />
+    <Compile Include="BASE\UserModel\InsertUserModel.cs" />
+    <Compile Include="BASE\UserModel\UserAppointedTask.cs" />
+    <Compile Include="BASE\UserModel\UserFriendModel.cs" />
+    <Compile Include="BASE\UserModel\MyTaskModel.cs" />
+    <Compile Include="BASE\UserModel\UserModel.cs" />
+    <Compile Include="BASE\UserModel\UserProjectModel.cs" />
+    <Compile Include="BASE\UserModel\UserScoringModel.cs" />
+    <Compile Include="BASE\UserModel\UserTaskModel.cs" />
+    <Compile Include="BASE\UserModel\UserTokenModel.cs" />
+    <Compile Include="Common\CommonFunction.cs" />
+    <Compile Include="DenemeEntity\Repository.cs" />
+    <Compile Include="IService1.cs" />
+    <Compile Include="Model133.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model133.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model133.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model133.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model133.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model133.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>Model133.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service1.svc.cs">
+      <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DYS.Business\DYS.Business.csproj">
+      <Project>{205d5032-5613-4be4-b36f-fb6b29ed4a6a}</Project>
+      <Name>DYS.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DYS.Common\DYS.Common.csproj">
+      <Project>{e1a7c50d-0709-4df9-b13c-c07da62f2669}</Project>
+      <Name>DYS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DYS.Data\DYS.Data.csproj">
+      <Project>{0c4e7ecc-fda5-462a-853e-4e8910f3ea0a}</Project>
+      <Name>DYS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfServiceLibrary1Demo2\WcfServiceLibrary1Demo2.csproj">
+      <Project>{063470BA-3719-468A-A2F0-730EA84ACF8D}</Project>
+      <Name>WcfServiceLibrary1Demo2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2404</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2404/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <EnableWcfTestClientForSVCDefaultValue>False</EnableWcfTestClientForSVCDefaultValue>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:2404/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

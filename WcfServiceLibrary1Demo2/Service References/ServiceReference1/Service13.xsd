@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/servisdemo13.BASE.UserModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/servisdemo13.BASE.UserModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserModel" nillable="true" type="tns:UserModel" />
+  <xs:complexType name="ArrayOfUserProjectModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserProjectModel" nillable="true" type="tns:UserProjectModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserProjectModel" nillable="true" type="tns:ArrayOfUserProjectModel" />
+  <xs:complexType name="UserProjectModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProjectModel" nillable="true" type="tns:UserProjectModel" />
+  <xs:complexType name="ArrayOfMyTaskModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyTaskModel" nillable="true" type="tns:MyTaskModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMyTaskModel" nillable="true" type="tns:ArrayOfMyTaskModel" />
+  <xs:complexType name="MyTaskModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndDateStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNow" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MyTaskDetail" nillable="true" type="tns:MyTaskModel.MyTaskDetailModel" />
+      <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDateStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyTaskModel" nillable="true" type="tns:MyTaskModel" />
+  <xs:complexType name="MyTaskModel.MyTaskDetailModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ByUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskDetail" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyTaskModel.MyTaskDetailModel" nillable="true" type="tns:MyTaskModel.MyTaskDetailModel" />
+  <xs:complexType name="MyTaskModel.MyTaskDetailStatusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsTaskStatu" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyTaskModel.MyTaskDetailStatusModel" nillable="true" type="tns:MyTaskModel.MyTaskDetailStatusModel" />
+</xs:schema>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DYS.Common.VO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DYS.Common.VO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfKullanici">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kullanici" nillable="true" type="tns:Kullanici" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKullanici" nillable="true" type="tns:ArrayOfKullanici" />
+  <xs:complexType name="Kullanici">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Aktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GonderenKullanici" nillable="true" type="tns:ArrayOfMesaj" />
+          <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+          <xs:element minOccurs="0" name="ResimYolu" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rol" nillable="true" type="tns:Rol" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+          <xs:element minOccurs="0" name="Sifre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SirketAdi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Soyad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:ArrayOfUserFriend" />
+          <xs:element minOccurs="0" name="UserAppoint" nillable="true" type="tns:ArrayOfDegerlendirmeDurumu" />
+          <xs:element minOccurs="0" name="UserJobFriend" nillable="true" type="tns:ArrayOfUserFriend" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Kullanici" nillable="true" type="tns:Kullanici" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="ArrayOfMesaj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mesaj" nillable="true" type="tns:Mesaj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMesaj" nillable="true" type="tns:ArrayOfMesaj" />
+  <xs:complexType name="Mesaj">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GelisTarihi" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GonderenGelisTarihi" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GonderenKullanici" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="GonderenKullaniciId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Kullanici" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+          <xs:element minOccurs="0" name="MesajAdi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Proje" nillable="true" type="tns:Proje" />
+          <xs:element minOccurs="0" name="ProjeId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectMessage" nillable="true" type="tns:ProjectMessage" />
+          <xs:element minOccurs="0" name="ProjectMessageId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Mesaj" nillable="true" type="tns:Mesaj" />
+  <xs:complexType name="Proje">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AktifBitmedi" type="xs:boolean" />
+          <xs:element minOccurs="0" name="BaslangicTarihi" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BitisTarihi" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DegerlendirmeDurumus" nillable="true" type="tns:ArrayOfDegerlendirmeDurumu" />
+          <xs:element minOccurs="0" name="GizlilikAktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Gorevs" nillable="true" type="tns:ArrayOfGorev" />
+          <xs:element minOccurs="0" name="Kullanici" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="ProjeAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjeAdi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjeId" type="xs:int" />
+          <xs:element minOccurs="0" name="Sira" type="xs:int" />
+          <xs:element minOccurs="0" name="SistemBaslamaTarihi" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="YoneticiKullaniciId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Proje" nillable="true" type="tns:Proje" />
+  <xs:complexType name="ArrayOfDegerlendirmeDurumu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DegerlendirmeDurumu" nillable="true" type="tns:DegerlendirmeDurumu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDegerlendirmeDurumu" nillable="true" type="tns:ArrayOfDegerlendirmeDurumu" />
+  <xs:complexType name="DegerlendirmeDurumu">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AtayanKullanici" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="AtayanKullaniciId" type="xs:int" />
+          <xs:element minOccurs="0" name="Gorev" nillable="true" type="tns:Gorev" />
+          <xs:element minOccurs="0" name="GorevId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IlerlemeDurumAdi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kullanici" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+          <xs:element minOccurs="0" name="Proje" nillable="true" type="tns:Proje" />
+          <xs:element minOccurs="0" name="ProjeId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Puan" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DegerlendirmeDurumu" nillable="true" type="tns:DegerlendirmeDurumu" />
+  <xs:complexType name="Gorev">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AktifBitmedi" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GizlilikAktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GorevAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GorevAdi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GorevBaslangic" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GorevBitis" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GorevId" type="xs:int" />
+          <xs:element minOccurs="0" name="GorevOncelik" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kullanici" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="KullaniciId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Proje" nillable="true" type="tns:Proje" />
+          <xs:element minOccurs="0" name="ProjeId" type="xs:int" />
+          <xs:element minOccurs="0" name="Sira" type="xs:int" />
+          <xs:element minOccurs="0" name="SistemBaslamaTarihi" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Gorev" nillable="true" type="tns:Gorev" />
+  <xs:complexType name="ArrayOfGorev">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gorev" nillable="true" type="tns:Gorev" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGorev" nillable="true" type="tns:ArrayOfGorev" />
+  <xs:complexType name="ProjectMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Proje" nillable="true" type="tns:Proje" />
+          <xs:element minOccurs="0" name="ProjectConversation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectMessage" nillable="true" type="tns:ProjectMessage" />
+  <xs:complexType name="Rol">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Aktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RolId" type="xs:int" />
+          <xs:element minOccurs="0" name="Tipi" nillable="true" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rol" nillable="true" type="tns:Rol" />
+  <xs:complexType name="ArrayOfUserFriend">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserFriend" nillable="true" type="tns:UserFriend" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserFriend" nillable="true" type="tns:ArrayOfUserFriend" />
+  <xs:complexType name="UserFriend">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aktive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Kullanici1" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="Kullanici2" nillable="true" type="tns:Kullanici" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserJobFriendId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserFriend" nillable="true" type="tns:UserFriend" />
+</xs:schema>
