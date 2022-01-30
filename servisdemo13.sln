@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28306.52
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "servisdemo13", "servisdemo13\servisdemo13.csproj", "{BE989CB3-A77F-40E2-8292-820A8388DAC0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary1Demo2", "WcfServiceLibrary1Demo2\WcfServiceLibrary1Demo2.csproj", "{063470BA-3719-468A-A2F0-730EA84ACF8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DYS.Business", "DYS.Business\DYS.Business.csproj", "{205D5032-5613-4BE4-B36F-FB6B29ED4A6A}"
 EndProject
@@ -23,10 +21,6 @@ Global
 		{BE989CB3-A77F-40E2-8292-820A8388DAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE989CB3-A77F-40E2-8292-820A8388DAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE989CB3-A77F-40E2-8292-820A8388DAC0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{063470BA-3719-468A-A2F0-730EA84ACF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{063470BA-3719-468A-A2F0-730EA84ACF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{063470BA-3719-468A-A2F0-730EA84ACF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{063470BA-3719-468A-A2F0-730EA84ACF8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{205D5032-5613-4BE4-B36F-FB6B29ED4A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{205D5032-5613-4BE4-B36F-FB6B29ED4A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{205D5032-5613-4BE4-B36F-FB6B29ED4A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
